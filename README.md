@@ -1,5 +1,7 @@
 # Multimodal Video Captioning & Summarization
 
+*Video captioning & summarization via bidirectional cross-attention fusion of audio (Whisper) and visual (CLIP) embeddings.*
+
 A transformer-based AI system that generates time-synchronized captions and abstractive summaries from recorded videos by integrating audio and visual modalities.
 
 ## Project Overview

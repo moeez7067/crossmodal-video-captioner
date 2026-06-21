@@ -106,5 +106,6 @@ frontend/build/
 
 # Paper / report (do not track)
 *.docx
+*.pdf
 docs/
 Report.pdf
