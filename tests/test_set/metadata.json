@@ -1,0 +1,33 @@
+{
+  "dataset_name": "video_captioning_test_set",
+  "description": "Test dataset for comparative analysis of video captioning models",
+  "total_videos": 2,
+  "categories": {
+    "lecture": 2,
+    "tutorial": 0,
+    "conversation": 0,
+    "presentation": 0
+  },
+  "split": {
+    "train": 0,
+    "test": 2
+  },
+  "videos": [
+    {
+      "video_id": "test_001",
+      "file_path": "videos/test.mp4",
+      "category": "lecture",
+      "duration": 238.56666666666666,
+      "ground_truth": "ground_truth/test_001.json",
+      "split": "test"
+    },
+    {
+      "video_id": "test_002",
+      "file_path": "videos/test_002.mp4",
+      "category": "lecture",
+      "duration": 390.6569333333333,
+      "ground_truth": "ground_truth/test_002.json",
+      "split": "test"
+    }
+  ]
+}

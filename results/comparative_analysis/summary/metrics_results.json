@@ -1,0 +1,116 @@
+{
+  "test_001": {
+    "audio_only": {
+      "bleu_1": 1.0,
+      "bleu_2": 1.0,
+      "bleu_3": 0.9838709677419355,
+      "bleu_4": 0.9354838709677419,
+      "cider": 0.7163566840920655,
+      "meteor": 0.9972725384630544,
+      "rouge_l_f1": 1.0,
+      "rouge_l_precision": 1.0,
+      "rouge_l_recall": 1.0
+    },
+    "visual_only": {
+      "bleu_1": 0.07451169745834678,
+      "bleu_2": 0.0,
+      "bleu_3": 0.0,
+      "bleu_4": 0.0,
+      "cider": 0.11076388888888888,
+      "meteor": 0.03812396105081421,
+      "rouge_l_f1": 0.0901549157186945,
+      "rouge_l_precision": 0.1375,
+      "rouge_l_recall": 0.07415285581936124
+    },
+    "concatenation": {
+      "bleu_1": 1.0,
+      "bleu_2": 1.0,
+      "bleu_3": 0.9838709677419355,
+      "bleu_4": 0.9354838709677419,
+      "cider": 0.7163566840920655,
+      "meteor": 0.9972725384630544,
+      "rouge_l_f1": 1.0,
+      "rouge_l_precision": 1.0,
+      "rouge_l_recall": 1.0
+    },
+    "addition": {
+      "bleu_1": 1.0,
+      "bleu_2": 1.0,
+      "bleu_3": 0.9838709677419355,
+      "bleu_4": 0.9354838709677419,
+      "cider": 0.7163566840920655,
+      "meteor": 0.9972725384630544,
+      "rouge_l_f1": 1.0,
+      "rouge_l_precision": 1.0,
+      "rouge_l_recall": 1.0
+    },
+    "gated": {
+      "bleu_1": 1.0,
+      "bleu_2": 1.0,
+      "bleu_3": 0.9838709677419355,
+      "bleu_4": 0.9354838709677419,
+      "cider": 0.7163566840920655,
+      "meteor": 0.9972725384630544,
+      "rouge_l_f1": 1.0,
+      "rouge_l_precision": 1.0,
+      "rouge_l_recall": 1.0
+    }
+  },
+  "test_002": {
+    "audio_only": {
+      "bleu_1": 1.0,
+      "bleu_2": 1.0,
+      "bleu_3": 0.9651162790697675,
+      "bleu_4": 0.9534883720930233,
+      "cider": 0.6665498402869255,
+      "meteor": 0.9967372437795717,
+      "rouge_l_f1": 1.0,
+      "rouge_l_precision": 1.0,
+      "rouge_l_recall": 1.0
+    },
+    "visual_only": {
+      "bleu_1": 0.041297254385499624,
+      "bleu_2": 0.0,
+      "bleu_3": 0.0,
+      "bleu_4": 0.0,
+      "cider": 0.06944444444444443,
+      "meteor": 0.023056894598270244,
+      "rouge_l_f1": 0.05606443406281877,
+      "rouge_l_precision": 0.08974358974358973,
+      "rouge_l_recall": 0.04267226175031605
+    },
+    "concatenation": {
+      "bleu_1": 1.0,
+      "bleu_2": 1.0,
+      "bleu_3": 0.9651162790697675,
+      "bleu_4": 0.9534883720930233,
+      "cider": 0.6665498402869255,
+      "meteor": 0.9967372437795717,
+      "rouge_l_f1": 1.0,
+      "rouge_l_precision": 1.0,
+      "rouge_l_recall": 1.0
+    },
+    "addition": {
+      "bleu_1": 1.0,
+      "bleu_2": 1.0,
+      "bleu_3": 0.9651162790697675,
+      "bleu_4": 0.9534883720930233,
+      "cider": 0.6665498402869255,
+      "meteor": 0.9967372437795717,
+      "rouge_l_f1": 1.0,
+      "rouge_l_precision": 1.0,
+      "rouge_l_recall": 1.0
+    },
+    "gated": {
+      "bleu_1": 1.0,
+      "bleu_2": 1.0,
+      "bleu_3": 0.9651162790697675,
+      "bleu_4": 0.9534883720930233,
+      "cider": 0.6665498402869255,
+      "meteor": 0.9967372437795717,
+      "rouge_l_f1": 1.0,
+      "rouge_l_precision": 1.0,
+      "rouge_l_recall": 1.0
+    }
+  }
+}

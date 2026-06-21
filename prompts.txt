@@ -1,0 +1,464 @@
+PROMPT OUTLINE: MULTIMODAL VIDEO CAPTIONING PROJECT
+=====================================================
+
+This document outlines the sequence of prompts that were given to Cursor to implement
+this multimodal video captioning and summarization repository. The prompts are organized
+by implementation phases, comparative analysis, and ablation studies.
+
+================================================================================
+PART 1: INITIAL PLANNING AND ARCHITECTURE
+================================================================================
+
+PROMPT 1: Complete Implementation Plan and Phases
+--------------------------------------------------
+"Create a complete implementation plan for a multimodal video captioning and 
+summarization system. The system should:
+- Process video files to extract audio and visual information
+- Use Whisper for speech-to-text transcription
+- Use CLIP for visual embeddings
+- Implement multimodal fusion using transformer architectures with cross-attention
+- Generate time-synchronized captions (SRT/VTT format)
+- Generate abstractive summaries with key points
+- Provide a web interface (React frontend + FastAPI backend)
+- Support multiple output formats (SRT, VTT, TXT, DOCX, PDF)
+- Include speaker diarization
+- Implement comparative analysis of different fusion strategies
+- Include ablation studies to identify critical components
+
+Break down the implementation into clear phases with specific deliverables for each phase.
+Define the folder structure, dependencies, and technical stack."
+
+
+================================================================================
+PART 2: PHASE-BY-PHASE IMPLEMENTATION PROMPTS
+================================================================================
+
+PHASE 1: Backend Foundation
+----------------------------
+
+PROMPT 2: Project Structure and Configuration
+"Set up the initial project structure for a multimodal video captioning system.
+Create:
+- Folder structure following best practices
+- Configuration management system (config.py)
+- Environment variable handling (.env)
+- Requirements.txt with all necessary dependencies
+- Basic logging infrastructure
+- Utility modules for file handling, time formatting, and validation
+- README.md with project overview"
+
+PROMPT 3: FastAPI Backend Foundation
+"Implement the FastAPI backend foundation:
+- Main FastAPI application setup
+- CORS configuration
+- Health check endpoint
+- Basic API route structure
+- Error handling middleware
+- Request/response models using Pydantic
+- Job management system for tracking video processing jobs"
+
+
+PHASE 2: Core Processing Modules
+-----------------------------------
+
+PROMPT 4: Video Preprocessing Module
+"Implement video preprocessing modules:
+- VideoProcessor class to extract frames from videos at configurable FPS
+- AudioExtractor class to extract audio tracks from videos
+- Audio chunking functionality for processing long videos
+- Metadata extraction (duration, resolution, FPS, codec, etc.)
+- Save extracted frames and audio to organized directory structure
+- Include error handling for various video formats"
+
+PROMPT 5: Audio Processing Module
+"Implement audio processing modules:
+- SpeechToText class using OpenAI Whisper for transcription
+- Support for different Whisper model sizes (base, small, medium, large)
+- Extract word-level timestamps from transcriptions
+- SpeakerDiarization class using pyannote.audio
+- Assign speaker labels to transcript segments
+- Generate speaker statistics
+- Save transcriptions and diarization results to JSON files"
+
+PROMPT 6: Visual Processing Module
+"Implement visual processing modules:
+- FrameExtractor class to extract and preprocess video frames
+- VisualEmbeddings class using CLIP for visual feature extraction
+- Slide transition detection for presentation videos
+- On-screen text extraction using OCR (optional)
+- Temporal alignment of visual embeddings with audio timestamps
+- Save visual embeddings and metadata to organized structure"
+
+PROMPT 7: Integration of Phase 2 Modules
+"Integrate all Phase 2 modules into a cohesive processing pipeline:
+- Update ProcessingService to orchestrate video, audio, and visual processing
+- Implement progress tracking for each processing stage
+- Add error handling and recovery mechanisms
+- Save all intermediate outputs to structured JSON files
+- Update API endpoints to use the integrated pipeline"
+
+
+PHASE 3: Multimodal Fusion
+---------------------------
+
+PROMPT 8: Cross-Attention Mechanism
+"Implement bidirectional cross-attention mechanism for multimodal fusion:
+- CrossAttention class for unidirectional attention (audio→visual or visual→audio)
+- BidirectionalCrossAttention class for mutual attention (audio↔visual)
+- Multi-head attention implementation
+- Support for different fusion methods (concatenation, addition, gated)
+- Layer normalization and dropout for regularization
+- Proper tensor operations and dimension handling"
+
+PROMPT 9: Multimodal Transformer Architecture
+"Implement the complete multimodal transformer architecture:
+- PositionalEncoding class for temporal information
+- FeedForward network layers
+- MultimodalTransformerLayer with cross-attention and self-attention
+- MultimodalTransformer stack with configurable depth (6 layers default)
+- Support for 12 attention heads and 768 hidden dimensions
+- Proper residual connections and layer normalization
+- Configurable dropout rates"
+
+PROMPT 10: Fusion Pipeline and Service
+"Implement the fusion pipeline and service:
+- FusionPipeline class to orchestrate fusion process
+- Model loading and saving functionality
+- Embedding preparation and tensor conversion
+- Temporal alignment utilities for audio-visual synchronization
+- FusionService class for high-level integration
+- Integration with ProcessingService
+- Save fused embeddings and fusion metadata to disk
+- Error handling and fallback mechanisms"
+
+PROMPT 11: Audio Embedding Extraction
+"Extend the SpeechToText module to extract audio embeddings:
+- Extract embeddings from Whisper encoder (before decoder)
+- Preserve temporal information in embeddings
+- Save audio embeddings to disk alongside transcriptions
+- Add configuration options for embedding extraction
+- Integrate with fusion pipeline"
+
+
+PHASE 4: Generation Pipeline
+----------------------------
+
+PROMPT 12: Caption Generator with T5
+"Implement caption generation using T5 model:
+- CaptionGenerator class with T5 model loading
+- Generate captions from transcript segments using T5
+- Apply task-specific prompts ('caption: {text}')
+- Caption refinement (capitalization, punctuation, merging short captions)
+- Support for multimodal embeddings (future-proofing for Phase 3)
+- Save generated captions to JSON
+- Error handling and fallback to simple text-based approach"
+
+PROMPT 13: Summarizer with T5
+"Implement abstractive summarization using T5 model:
+- Summarizer class with T5 model loading
+- Generate abstractive summaries from full transcripts
+- Handle long transcripts with chunking strategy
+- Extract key points using hierarchical summarization
+- Integrate visual context into summaries
+- Enhanced grammar and formatting improvements
+- Save summaries and key points to JSON"
+
+PROMPT 14: Integration of Generation Pipeline
+"Integrate caption generation and summarization into processing service:
+- Replace simple caption mapping with T5-based generation
+- Replace simple summary extraction with T5-based summarization
+- Update progress tracking (80% captions, 87% summary, 95% formatting)
+- Add key points to results structure
+- Update API response models to include key points
+- Frontend updates to display key points and improved summaries"
+
+
+PHASE 5: Backend API and Frontend
+----------------------------------
+
+PROMPT 15: Complete API Endpoints
+"Complete the FastAPI backend with all endpoints:
+- POST /api/video/upload - Upload video files
+- POST /api/video/process - Start video processing
+- GET /api/video/status/{job_id} - Get processing status
+- GET /api/video/results/{job_id} - Get processing results
+- GET /api/video/download/{job_id}/{format} - Download files in various formats
+- GET /api/health - Health check with model status
+- Implement proper error handling and validation
+- Add CORS configuration for frontend integration"
+
+PROMPT 16: React Frontend Implementation
+"Implement a complete React + TypeScript frontend:
+- VideoUploader component with drag-and-drop functionality
+- ProcessingStatus component for real-time progress tracking
+- ResultsViewer component to display captions, transcripts, and summaries
+- VideoPlayer component with caption overlay support
+- HistorySidebar component for viewing past processing jobs
+- API service layer for backend communication
+- Modern, responsive UI with professional styling
+- Support for downloading results in multiple formats"
+
+PROMPT 17: Output Formatting
+"Implement output formatting modules:
+- CaptionFormatter class for SRT and VTT formats
+- TranscriptFormatter class for TXT and DOCX formats
+- SummaryFormatter class for TXT, DOCX, and PDF formats
+- Proper timestamp formatting and synchronization
+- Speaker attribution in transcripts
+- Professional document formatting for DOCX and PDF"
+
+
+================================================================================
+PART 3: COMPARATIVE ANALYSIS IMPLEMENTATION
+================================================================================
+
+PROMPT 18: Evaluation Metrics Implementation
+"Implement comprehensive evaluation metrics for video captioning:
+- BLEU scores (BLEU-1, BLEU-2, BLEU-3, BLEU-4) with n-gram precision
+- CIDEr score with TF-IDF weighted consensus
+- METEOR score with synonym matching and alignment
+- ROUGE-L score based on longest common subsequence
+- MetricsCalculator class to compute all metrics
+- CaptionEvaluator class for batch evaluation
+- Support for multiple reference captions"
+
+PROMPT 19: Baseline Models Implementation
+"Implement baseline models for comparative analysis:
+- AudioOnlyModel: Uses only Whisper transcription
+- VisualOnlyModel: Uses only CLIP visual embeddings
+- SimpleFusion models:
+  * ConcatenationFusion: Concatenates audio and visual embeddings
+  * AdditionFusion: Element-wise addition of embeddings
+  * GatedFusion: Learnable gating mechanism
+- BaseCaptionModel interface for all models
+- Model registry system for managing models
+- Consistent interface for all models"
+
+PROMPT 20: Experiment Infrastructure
+"Implement experiment infrastructure for comparative analysis:
+- ExperimentRunner class to run all models on test dataset
+- ResultsAnalyzer class to compute metrics and generate reports
+- Configuration system for experiment settings
+- Dataset loader for test videos with ground truth captions
+- Ground truth manager for reference caption handling
+- Prediction saving and loading functionality"
+
+PROMPT 21: Comparative Analysis Scripts
+"Create scripts for running comparative analysis:
+- run_comparison.py: Main script to run complete comparative analysis
+- prepare_test_dataset.py: Script to prepare and manage test dataset
+- register_models.py: Script to register all models
+- Generate comparison tables (CSV and Markdown formats)
+- Create visualizations (bar charts, heatmaps) for all metrics
+- Generate comprehensive analysis reports"
+
+PROMPT 22: Dataset Preparation
+"Implement dataset preparation utilities:
+- VideoCaptionDataset class to load test videos
+- Support for custom YouTube videos and HowToM dataset subset
+- Ground truth caption management (SRT import, JSON storage)
+- Video metadata tracking (category, source, split)
+- Template generation for manual caption creation
+- Dataset statistics and validation"
+
+
+================================================================================
+PART 4: ABLATION STUDIES IMPLEMENTATION
+================================================================================
+
+PROMPT 23: Ablation Study Infrastructure
+"Implement infrastructure for systematic ablation studies:
+- AblationRunner class to run ablation experiments
+- AblationAnalyzer class to analyze ablation results
+- Ablation configuration system defining variants
+- Ablation model creation utilities
+- Support for component removal (gating, projection, modalities)
+- Support for component simplification variants"
+
+PROMPT 24: Ablation Variants Implementation
+"Implement ablation variants:
+- Remove gating mechanism (fallback to addition)
+- Remove audio modality (visual-only)
+- Remove visual modality (audio-only)
+- Remove projection layers
+- Simplify gating network (single layer vs multi-layer)
+- Remove temporal alignment
+- Combined ablations (e.g., no gating + no projection)
+- AblatedConcatenationFusion and AblatedGatedFusion classes"
+
+PROMPT 25: Ablation Study Scripts
+"Create scripts for running ablation studies:
+- run_ablation.py: Main script to run complete ablation study
+- Generate ablation-specific comparison tables
+- Create visualizations showing performance degradation
+- Generate reports analyzing component contributions
+- Compute delta metrics (performance change from baseline)
+- Identify critical components through systematic removal"
+
+
+================================================================================
+PART 5: IMPROVEMENTS AND REFINEMENTS
+================================================================================
+
+PROMPT 26: Grammar and Formatting Improvements
+"Improve grammar and formatting in generated captions and summaries:
+- Enhanced sentence flow and coherence
+- Better punctuation correction
+- Proper capitalization fixes
+- Remove redundant phrases
+- Improve key points parsing and formatting
+- Professional frontend display with improved layout"
+
+PROMPT 27: Dependency and Configuration Fixes
+"Fix dependency issues and improve configuration:
+- Add missing dependencies (sentencepiece for T5Tokenizer)
+- Update requirements.txt with all necessary packages
+- Improve configuration defaults and validation
+- Add environment variable documentation
+- Fix model loading and caching issues"
+
+PROMPT 28: Error Handling and Robustness
+"Improve error handling throughout the system:
+- Graceful fallbacks when models fail to load
+- Better error messages and logging
+- Handle edge cases (empty transcripts, missing frames, etc.)
+- Memory error handling for large videos
+- Timeout handling for long processing jobs
+- Validation of input files and formats"
+
+PROMPT 29: Performance Optimization
+"Optimize system performance:
+- Lazy loading of models (load on first use)
+- Model caching to prevent reloading
+- Batch processing for embeddings
+- Efficient tensor operations
+- Memory management for large videos
+- Progress tracking improvements"
+
+PROMPT 30: Documentation and Code Quality
+"Improve documentation and code quality:
+- Comprehensive docstrings for all classes and methods
+- Phase-specific documentation files (PHASE2_DOCUMENTATION.md, etc.)
+- API documentation and usage examples
+- Troubleshooting guides
+- Code organization and structure improvements
+- Type hints and type checking"
+
+
+================================================================================
+PART 6: TESTING AND VALIDATION
+================================================================================
+
+PROMPT 31: Dataset Validation
+"Implement dataset validation and testing:
+- Script to check video files and formats
+- Validate ground truth captions
+- Dataset statistics and analysis
+- Video quality checks
+- Audio extraction validation"
+
+PROMPT 32: End-to-End Testing
+"Test the complete pipeline:
+- Test with various video formats and lengths
+- Test with different video categories (lectures, tutorials, presentations)
+- Validate output formats (SRT, VTT, TXT, DOCX, PDF)
+- Test error handling and recovery
+- Performance benchmarking"
+
+
+================================================================================
+PART 7: FINAL INTEGRATION AND POLISH
+================================================================================
+
+PROMPT 33: Final Integration
+"Final integration of all components:
+- Ensure all phases work together seamlessly
+- Update processing pipeline with all features
+- Integrate comparative analysis into main workflow
+- Integrate ablation studies into evaluation
+- Update frontend to show all features
+- Complete API documentation"
+
+PROMPT 34: Results Analysis and Reporting
+"Implement results analysis and reporting:
+- Generate comprehensive comparison tables
+- Create visualizations for all metrics
+- Generate analysis reports with findings
+- Document experimental results
+- Create summary statistics
+- Export results in multiple formats (CSV, JSON, Markdown)"
+
+PROMPT 35: Project Documentation
+"Complete project documentation:
+- Update README.md with complete project overview
+- Create implementation guides for each phase
+- Document API endpoints and usage
+- Create user guides for frontend
+- Document experimental setup and results
+- Create troubleshooting guides"
+
+
+================================================================================
+SUMMARY OF PROMPT CATEGORIES
+================================================================================
+
+1. INITIAL PLANNING (1 prompt)
+   - Complete implementation plan and phases
+
+2. PHASE 1: BACKEND FOUNDATION (2 prompts)
+   - Project structure and configuration
+   - FastAPI backend foundation
+
+3. PHASE 2: CORE PROCESSING (4 prompts)
+   - Video preprocessing
+   - Audio processing
+   - Visual processing
+   - Integration of Phase 2 modules
+
+4. PHASE 3: MULTIMODAL FUSION (4 prompts)
+   - Cross-attention mechanism
+   - Multimodal transformer architecture
+   - Fusion pipeline and service
+   - Audio embedding extraction
+
+5. PHASE 4: GENERATION PIPELINE (3 prompts)
+   - Caption generator with T5
+   - Summarizer with T5
+   - Integration of generation pipeline
+
+6. PHASE 5: API AND FRONTEND (3 prompts)
+   - Complete API endpoints
+   - React frontend implementation
+   - Output formatting
+
+7. COMPARATIVE ANALYSIS (5 prompts)
+   - Evaluation metrics
+   - Baseline models
+   - Experiment infrastructure
+   - Comparative analysis scripts
+   - Dataset preparation
+
+8. ABLATION STUDIES (3 prompts)
+   - Ablation study infrastructure
+   - Ablation variants implementation
+   - Ablation study scripts
+
+9. IMPROVEMENTS (5 prompts)
+   - Grammar and formatting
+   - Dependency fixes
+   - Error handling
+   - Performance optimization
+   - Documentation
+
+10. TESTING (2 prompts)
+    - Dataset validation
+    - End-to-end testing
+
+11. FINAL INTEGRATION (3 prompts)
+    - Final integration
+    - Results analysis
+    - Project documentation
+
+TOTAL: 35 prompts organized across 11 categories
+
+

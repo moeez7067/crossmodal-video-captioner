@@ -1,0 +1,35 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: video-caption-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      # Persist data
+      - ./data:/app/data
+      - ./models:/app/models
+    environment:
+      - HUGGING_FACE_TOKEN=${HUGGING_FACE_TOKEN}
+      - WHISPER_MODEL=base
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: video-caption-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  data:
+  models:

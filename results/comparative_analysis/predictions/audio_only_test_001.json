@@ -1,0 +1,318 @@
+{
+  "model_name": "audio_only",
+  "video_id": "test_001",
+  "captions": [
+    {
+      "text": "Hi, I'm Ram Gopal from presentationprocess.com.",
+      "start_time": 0.0,
+      "end_time": 3.8
+    },
+    {
+      "text": "In this video, we'll talk about a few important PowerPoint tips for teachers.",
+      "start_time": 4.14,
+      "end_time": 8.58
+    },
+    {
+      "text": "While I may have talked about some of these tips in other videos, this video is a handy.",
+      "start_time": 9.16,
+      "end_time": 13.54
+    },
+    {
+      "text": "Compilation of all the tips that are relevant for teachers.",
+      "start_time": 13.54,
+      "end_time": 16.5
+    },
+    {
+      "text": "So let us jump right in with a first tip.",
+      "start_time": 17.18,
+      "end_time": 19.38
+    },
+    {
+      "text": "The tip is to increase the cursor size.",
+      "start_time": 19.88,
+      "end_time": 22.84
+    },
+    {
+      "text": "Now this might look like a small tip, pun intended.",
+      "start_time": 23.6,
+      "end_time": 26.56
+    },
+    {
+      "text": "A simple step of increasing your cursor size can help you to guide the viewer's attention.",
+      "start_time": 26.56,
+      "end_time": 32.62
+    },
+    {
+      "text": "Quite easily.",
+      "start_time": 32.62,
+      "end_time": 33.58
+    },
+    {
+      "text": "Now let us say you want to talk about a software, say PowerPoint and you want to point out.",
+      "start_time": 34.26,
+      "end_time": 38.42
+    },
+    {
+      "text": "To some of the tabs.",
+      "start_time": 38.42,
+      "end_time": 39.54
+    },
+    {
+      "text": "Now take a look at how difficult it is to follow the cursor when it is this size.",
+      "start_time": 40.24,
+      "end_time": 44.08
+    },
+    {
+      "text": "Now I'm going to increase the cursor size and then let us see how the pointing becomes.",
+      "start_time": 44.92,
+      "end_time": 49.48
+    },
+    {
+      "text": "That much clearer.",
+      "start_time": 49.48,
+      "end_time": 50.46
+    },
+    {
+      "text": "To increase the cursor size, you need to take your cursor all the way down, even below.",
+      "start_time": 51.06,
+      "end_time": 55.56
+    },
+    {
+      "text": "The status bar and then you right click to access this one called as the taskbar settings.",
+      "start_time": 55.56,
+      "end_time": 61.64
+    },
+    {
+      "text": "When you click on that, you get this option.",
+      "start_time": 62.36,
+      "end_time": 64.5
+    },
+    {
+      "text": "Then you click on home, so you go back to this screen, then go to ease of access and here.",
+      "start_time": 65.08,
+      "end_time": 71.98
+    },
+    {
+      "text": "You have the option under vision called cursor and pointer, you click on it and here you.",
+      "start_time": 71.98,
+      "end_time": 77.1
+    },
+    {
+      "text": "Have the option to change pointer size and color.",
+      "start_time": 77.1,
+      "end_time": 79.98
+    },
+    {
+      "text": "You can increase the pointer size like so.",
+      "start_time": 80.5,
+      "end_time": 83.14
+    },
+    {
+      "text": "Maybe you can keep it till the pointer for around 7 points and that really increases.",
+      "start_time": 83.14,
+      "end_time": 87.32
+    },
+    {
+      "text": "And you can see the size of the cursor right now.",
+      "start_time": 87.32,
+      "end_time": 89.72
+    },
+    {
+      "text": "And if you want you can change the color of the pointer by clicking on this option and.",
+      "start_time": 90.32,
+      "end_time": 95.74
+    },
+    {
+      "text": "Here you can choose any color from these options available.",
+      "start_time": 95.74,
+      "end_time": 99.02
+    },
+    {
+      "text": "I'm going to stick to the white color here, let me close this and now see how easy it.",
+      "start_time": 99.48,
+      "end_time": 104.92
+    },
+    {
+      "text": "Is for me to point to any of the areas here.",
+      "start_time": 104.92,
+      "end_time": 107.82
+    },
+    {
+      "text": "Just by increasing the size of your cursor, you can make it so much easier for your audience.",
+      "start_time": 108.32,
+      "end_time": 112.98
+    },
+    {
+      "text": "To follow your lecture.",
+      "start_time": 112.98,
+      "end_time": 114.1
+    },
+    {
+      "text": "The next handy tip is to zoom in on pictures.",
+      "start_time": 114.66,
+      "end_time": 117.64
+    },
+    {
+      "text": "As a teacher or a trainer, you may be required to show pictures as part of your presentation.",
+      "start_time": 118.54,
+      "end_time": 123.3
+    },
+    {
+      "text": "Do you know PowerPoint makes it extremely easy for you to zoom in on pictures while you.",
+      "start_time": 123.9,
+      "end_time": 128.26
+    },
+    {
+      "text": "Are in the slideshow mode.",
+      "start_time": 128.26,
+      "end_time": 129.38
+    },
+    {
+      "text": "All you need to do for that is hold the control button down while you use the scroll wheel.",
+      "start_time": 129.82,
+      "end_time": 135.48
+    },
+    {
+      "text": "To move up and that zooms in on the picture.",
+      "start_time": 135.48,
+      "end_time": 139.08
+    },
+    {
+      "text": "And while holding the control button down when you move the scroll wheel back, you can.",
+      "start_time": 139.08,
+      "end_time": 144.24
+    },
+    {
+      "text": "Let me do that again.",
+      "start_time": 145.32,
+      "end_time": 146.08
+    },
+    {
+      "text": "Hold the control button down and zoom in.",
+      "start_time": 146.62,
+      "end_time": 148.92
+    },
+    {
+      "text": "And while I am zoomed in, it is possible for me to move my picture like so so that I.",
+      "start_time": 149.56,
+      "end_time": 154.24
+    },
+    {
+      "text": "Can get the viewer's attention to different areas of the slide.",
+      "start_time": 154.24,
+      "end_time": 157.2
+    },
+    {
+      "text": "And once I am done zooming in, I can just hit my escape button to get the slide show the.",
+      "start_time": 157.62,
+      "end_time": 163.46
+    },
+    {
+      "text": "Way it was",
+      "start_time": 163.46,
+      "end_time": 163.96
+    },
+    {
+      "text": "So the next time you want to present pictures, make sure you use this handy functionality.",
+      "start_time": 164.76000000000002,
+      "end_time": 169.0
+    },
+    {
+      "text": "Of zooming in to your pictures.",
+      "start_time": 169.0,
+      "end_time": 171.04
+    },
+    {
+      "text": "The next handy tip is to annotate with pen tool.",
+      "start_time": 171.74,
+      "end_time": 175.28
+    },
+    {
+      "text": "Whenever you want to record video lessons of your lectures, especially the maths lectures.",
+      "start_time": 175.78,
+      "end_time": 180.5
+    },
+    {
+      "text": "Or even science lectures where you need to draw diagrams, this useful option of being.",
+      "start_time": 180.5,
+      "end_time": 185.44
+    },
+    {
+      "text": "Able to write on your screen with pen tool can come in quite handy.",
+      "start_time": 185.44,
+      "end_time": 189.02
+    },
+    {
+      "text": "But there is one caveat here.",
+      "start_time": 189.52,
+      "end_time": 191.28
+    },
+    {
+      "text": "Well, you can always annotate using your mouse.",
+      "start_time": 191.84,
+      "end_time": 194.1
+    },
+    {
+      "text": "It will be handy to have a graphic tablet and pen so you can draw freely on your screen.",
+      "start_time": 194.48,
+      "end_time": 199.4
+    },
+    {
+      "text": "For example, if I have to make this presentation on the anatomy of thorax, the way I would explain.",
+      "start_time": 199.9,
+      "end_time": 205.36
+    },
+    {
+      "text": "With my pen tool is like this.",
+      "start_time": 205.36,
+      "end_time": 207.2
+    },
+    {
+      "text": "I would draw around the area that I want to highlight.",
+      "start_time": 207.6,
+      "end_time": 210.94
+    },
+    {
+      "text": "Can you see here.",
+      "start_time": 211.14,
+      "end_time": 211.78
+    },
+    {
+      "text": "It is much easier for the audience to follow what I am saying when I draw like this.",
+      "start_time": 212.02,
+      "end_time": 215.78
+    },
+    {
+      "text": "And then I say that this is clavicle.",
+      "start_time": 216.14,
+      "end_time": 219.18
+    },
+    {
+      "text": "Can you see it is easy for me to write my text when I have a graphic tablet and pen.",
+      "start_time": 219.78,
+      "end_time": 224.92
+    },
+    {
+      "text": "I can make quick marks like this is scapula.",
+      "start_time": 225.58,
+      "end_time": 228.52
+    },
+    {
+      "text": "Can you see it is so easy for me to point and write my notes.",
+      "start_time": 228.94,
+      "end_time": 233.04
+    },
+    {
+      "text": "And at any point of time you want to erase some part of what you have written, you can go.",
+      "start_time": 233.8,
+      "end_time": 237.86
+    },
+    {
+      "text": "To the object.",
+      "start_time": 237.86,
+      "end_time": 238.54
+    }
+  ],
+  "num_captions": 62,
+  "formatted_text": "Hi, I'm Ram Gopal from presentationprocess.com. In this video, we'll talk about a few important PowerPoint tips for teachers. While I may have talked about some of these tips in other videos, this video is a handy. Compilation of all the tips that are relevant for teachers. So let us jump right in with a first tip. The tip is to increase the cursor size. Now this might look like a small tip, pun intended. A simple step of increasing your cursor size can help you to guide the viewer's attention. Quite easily. Now let us say you want to talk about a software, say PowerPoint and you want to point out. To some of the tabs. Now take a look at how difficult it is to follow the cursor when it is this size. Now I'm going to increase the cursor size and then let us see how the pointing becomes. That much clearer. To increase the cursor size, you need to take your cursor all the way down, even below. The status bar and then you right click to access this one called as the taskbar settings. When you click on that, you get this option. Then you click on home, so you go back to this screen, then go to ease of access and here. You have the option under vision called cursor and pointer, you click on it and here you. Have the option to change pointer size and color. You can increase the pointer size like so. Maybe you can keep it till the pointer for around 7 points and that really increases. And you can see the size of the cursor right now. And if you want you can change the color of the pointer by clicking on this option and. Here you can choose any color from these options available. I'm going to stick to the white color here, let me close this and now see how easy it. Is for me to point to any of the areas here. Just by increasing the size of your cursor, you can make it so much easier for your audience. To follow your lecture. The next handy tip is to zoom in on pictures. As a teacher or a trainer, you may be required to show pictures as part of your presentation. Do you know PowerPoint makes it extremely easy for you to zoom in on pictures while you. Are in the slideshow mode. All you need to do for that is hold the control button down while you use the scroll wheel. To move up and that zooms in on the picture. And while holding the control button down when you move the scroll wheel back, you can. Let me do that again. Hold the control button down and zoom in. And while I am zoomed in, it is possible for me to move my picture like so so that I. Can get the viewer's attention to different areas of the slide. And once I am done zooming in, I can just hit my escape button to get the slide show the. Way it was So the next time you want to present pictures, make sure you use this handy functionality. Of zooming in to your pictures. The next handy tip is to annotate with pen tool. Whenever you want to record video lessons of your lectures, especially the maths lectures. Or even science lectures where you need to draw diagrams, this useful option of being. Able to write on your screen with pen tool can come in quite handy. But there is one caveat here. Well, you can always annotate using your mouse. It will be handy to have a graphic tablet and pen so you can draw freely on your screen. For example, if I have to make this presentation on the anatomy of thorax, the way I would explain. With my pen tool is like this. I would draw around the area that I want to highlight. Can you see here. It is much easier for the audience to follow what I am saying when I draw like this. And then I say that this is clavicle. Can you see it is easy for me to write my text when I have a graphic tablet and pen. I can make quick marks like this is scapula. Can you see it is so easy for me to point and write my notes. And at any point of time you want to erase some part of what you have written, you can go. To the object."
+}

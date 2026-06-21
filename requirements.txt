@@ -1,0 +1,58 @@
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.30.0
+numpy>=1.24.0
+pillow>=10.0.0
+
+# Audio processing
+openai-whisper>=20231117
+librosa>=0.10.0
+soundfile>=0.12.0
+
+# Video processing
+opencv-python>=4.8.0
+ffmpeg-python>=0.2.0
+
+# Visual embeddings
+open-clip-torch>=2.20.0
+# Visual embeddings - FIXED: Use official CLIP
+git+https://github.com/openai/CLIP.git
+timm>=0.9.0
+
+# OCR (for on-screen text)
+pytesseract>=0.3.10
+easyocr>=1.7.0
+
+# Document generation
+python-docx>=1.0.0
+reportlab>=4.0.0
+
+# Utilities
+tqdm>=4.65.0
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+
+# API Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+
+# Task queue
+rq>=1.1.0
+redis>=4.5.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Jupyter notebooks
+jupyter>=1.0.0
+ipykernel>=6.25.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Added during environment setup (required at runtime, were missing)
+sentencepiece>=0.2.0   # T5 tokenizer for summarization
+nltk>=3.8              # evaluation metrics (BLEU / METEOR)
+rouge_score>=0.1.2     # evaluation metrics (ROUGE)

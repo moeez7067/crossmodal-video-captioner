@@ -1,0 +1,92 @@
+{
+  "experiment_name": "comparative_analysis",
+  "models": {
+    "audio_only": {
+      "videos_processed": 2,
+      "videos_succeeded": 2,
+      "videos_failed": 0
+    },
+    "visual_only": {
+      "videos_processed": 2,
+      "videos_succeeded": 2,
+      "videos_failed": 0
+    },
+    "concatenation": {
+      "videos_processed": 2,
+      "videos_succeeded": 2,
+      "videos_failed": 0
+    },
+    "addition": {
+      "videos_processed": 2,
+      "videos_succeeded": 2,
+      "videos_failed": 0
+    },
+    "gated": {
+      "videos_processed": 2,
+      "videos_succeeded": 2,
+      "videos_failed": 0
+    }
+  },
+  "videos": {
+    "test_001": {
+      "audio_only": {
+        "num_captions": 62,
+        "processing_time": 71.2237434387207,
+        "success": true
+      },
+      "visual_only": {
+        "num_captions": 80,
+        "processing_time": 98.92909121513367,
+        "success": true
+      },
+      "concatenation": {
+        "num_captions": 62,
+        "processing_time": 170.9315631389618,
+        "success": true
+      },
+      "addition": {
+        "num_captions": 62,
+        "processing_time": 160.09870195388794,
+        "success": true
+      },
+      "gated": {
+        "num_captions": 62,
+        "processing_time": 155.40089654922485,
+        "success": true
+      }
+    },
+    "test_002": {
+      "audio_only": {
+        "num_captions": 86,
+        "processing_time": 98.65004873275757,
+        "success": true
+      },
+      "visual_only": {
+        "num_captions": 130,
+        "processing_time": 84.4595103263855,
+        "success": true
+      },
+      "concatenation": {
+        "num_captions": 86,
+        "processing_time": 207.71102666854858,
+        "success": true
+      },
+      "addition": {
+        "num_captions": 86,
+        "processing_time": 187.3442211151123,
+        "success": true
+      },
+      "gated": {
+        "num_captions": 86,
+        "processing_time": 213.16454648971558,
+        "success": true
+      }
+    }
+  },
+  "summary": {
+    "total_videos": 2,
+    "total_models": 5,
+    "completed_models": 5,
+    "failed_models": 0
+  }
+}

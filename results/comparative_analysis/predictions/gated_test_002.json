@@ -1,0 +1,438 @@
+{
+  "model_name": "gated",
+  "video_id": "test_002",
+  "captions": [
+    {
+      "text": "Well, the next topic we want to cover and our broad overview of computer networking is.",
+      "start_time": 10.920000000000002,
+      "end_time": 15.5
+    },
+    {
+      "text": "Networking security.",
+      "start_time": 15.5,
+      "end_time": 16.54
+    },
+    {
+      "text": "Now, there's an entire chapter of our textbook chapter 8 that's devoted to network security.",
+      "start_time": 16.88,
+      "end_time": 22.04
+    },
+    {
+      "text": "And so we'll get to that later and we'll be thinking about security throughout the.",
+      "start_time": 22.04,
+      "end_time": 26.54
+    },
+    {
+      "text": "Course as we go through the different layers of the network architecture.",
+      "start_time": 26.54,
+      "end_time": 30.3
+    },
+    {
+      "text": "But for now, there are two questions that we might want to keep in mind.",
+      "start_time": 30.7,
+      "end_time": 34.74
+    },
+    {
+      "text": "First, what are the kinds of bad things that bad actors can do in a network setting.",
+      "start_time": 35.04,
+      "end_time": 41.38
+    },
+    {
+      "text": "And we'll be focusing primarily on the network rather than the end systems.",
+      "start_time": 41.82,
+      "end_time": 45.34
+    },
+    {
+      "text": "And then secondly, what are the broad class of defenses that can be deployed to both prevent.",
+      "start_time": 45.7,
+      "end_time": 51.5
+    },
+    {
+      "text": "And mitigate and react to such network attacks.",
+      "start_time": 51.5,
+      "end_time": 54.8
+    },
+    {
+      "text": "And we'll want to keep the answers to these two questions in mind as we go throughout.",
+      "start_time": 55.36,
+      "end_time": 58.8
+    },
+    {
+      "text": "The course",
+      "start_time": 58.8,
+      "end_time": 59.2
+    },
+    {
+      "text": "Well, let's start our discussion of network security by noting that the original internet.",
+      "start_time": 60.160000000000004,
+      "end_time": 64.68
+    },
+    {
+      "text": "Architecture wasn't really designed with security in mind and it wasn't as if they really.",
+      "start_time": 64.68,
+      "end_time": 70.06
+    },
+    {
+      "text": "Forgot about security.",
+      "start_time": 70.06,
+      "end_time": 71.42
+    },
+    {
+      "text": "But rather, the original design vision was for quote unquote a group of mutually trusting.",
+      "start_time": 71.62,
+      "end_time": 77.74
+    },
+    {
+      "text": "Users attached to a transparent network.",
+      "start_time": 77.74,
+      "end_time": 80.32
+    },
+    {
+      "text": "Doesn't that sound nice.",
+      "start_time": 80.76,
+      "end_time": 81.7
+    },
+    {
+      "text": "Obviously not what we have today.",
+      "start_time": 82.26,
+      "end_time": 83.76
+    },
+    {
+      "text": "But the designers weren't naive.",
+      "start_time": 83.76,
+      "end_time": 85.42
+    },
+    {
+      "text": "It's just that security was not consciously a critical design criteria given the.",
+      "start_time": 85.7,
+      "end_time": 90.94
+    },
+    {
+      "text": "Envisioned use at the time.",
+      "start_time": 90.94,
+      "end_time": 92.04
+    },
+    {
+      "text": "And so here we are today still sort of playing catch up in some sense on network security.",
+      "start_time": 92.78,
+      "end_time": 97.26
+    },
+    {
+      "text": "In thinking about network security, we'll need to think about a few things.",
+      "start_time": 97.74,
+      "end_time": 101.48
+    },
+    {
+      "text": "First, how can the bad guys attack or compromise a computer network.",
+      "start_time": 101.88,
+      "end_time": 106.18
+    },
+    {
+      "text": "Secondly, how are we going to defend against some of these kinds of attacks.",
+      "start_time": 106.52,
+      "end_time": 110.26
+    },
+    {
+      "text": "And then finally, how might we design network architectures that are immune to attacks.",
+      "start_time": 110.9,
+      "end_time": 116.5
+    },
+    {
+      "text": "This is sometimes called security by design phrase that I love.",
+      "start_time": 116.82,
+      "end_time": 120.54
+    },
+    {
+      "text": "It means that the architecture itself is built in such a way to enable security.",
+      "start_time": 121.12,
+      "end_time": 125.3
+    },
+    {
+      "text": "Buildings are built that way, for example, to enable security by design.",
+      "start_time": 125.84,
+      "end_time": 129.52
+    },
+    {
+      "text": "And so too can network architecture.",
+      "start_time": 130.08,
+      "end_time": 131.82
+    },
+    {
+      "text": "And this is an active area of research right now in computer networking.",
+      "start_time": 132.3,
+      "end_time": 135.52
+    },
+    {
+      "text": "Well, let's start by looking at some of the ways in which bad actors can behave.",
+      "start_time": 136.16,
+      "end_time": 140.62
+    },
+    {
+      "text": "Well, it's probably not a bad assumption to assume that a bad actor can get copies of.",
+      "start_time": 142.3,
+      "end_time": 147.64
+    },
+    {
+      "text": "Packets that are whizzing by on shared media like a wireless channel, for example.",
+      "start_time": 147.64,
+      "end_time": 151.8
+    },
+    {
+      "text": "So for example, if we have a bad actor here at C, we should assume that C can read.",
+      "start_time": 152.34,
+      "end_time": 157.14
+    },
+    {
+      "text": "everything that B is sending to A along the shared media.",
+      "start_time": 157.14,
+      "end_time": 160.6
+    },
+    {
+      "text": "And there are actually software tools called packet sniffers that can be used to do.",
+      "start_time": 160.92,
+      "end_time": 165.2
+    },
+    {
+      "text": "We'll actually use such a packet sniffer extensively.",
+      "start_time": 165.78,
+      "end_time": 168.24
+    },
+    {
+      "text": "It's called Wireshark in this class to capture packets on the wire and for us to watch protocols.",
+      "start_time": 168.42,
+      "end_time": 173.92
+    },
+    {
+      "text": "We should also assume that a bad actor can inject packets into the network containing.",
+      "start_time": 175.6,
+      "end_time": 180.4
+    },
+    {
+      "text": "Any information they want.",
+      "start_time": 180.4,
+      "end_time": 181.88
+    },
+    {
+      "text": "For example, here's a bad actor at C sending in a spoofed, that's to say, faked packets.",
+      "start_time": 182.38,
+      "end_time": 188.24
+    },
+    {
+      "text": "to A with a fake source address indicating to A that the packet actually came from B.",
+      "start_time": 188.24,
+      "end_time": 194.18
+    },
+    {
+      "text": "And this is conceptually the same thing as when you get a phishing email claiming to.",
+      "start_time": 194.18,
+      "end_time": 198.94
+    },
+    {
+      "text": "Be from a bank, a colleague, or someone saying that they've come into a multimillion dollar.",
+      "start_time": 198.94,
+      "end_time": 203.98
+    },
+    {
+      "text": "Sum and could you just help them deposit it into a bank account for your share of the.",
+      "start_time": 203.98,
+      "end_time": 208.42
+    },
+    {
+      "text": "Well, you don't believe them and why should a piece of network equipment or piece of software.",
+      "start_time": 209.1,
+      "end_time": 214.12
+    },
+    {
+      "text": "Believe what a packet says just because a packet arrived.",
+      "start_time": 214.12,
+      "end_time": 217.52
+    },
+    {
+      "text": "Bad actors can also launch denial of service attacks by generating so much workload that.",
+      "start_time": 219.18,
+      "end_time": 224.84
+    },
+    {
+      "text": "A network device becomes overloaded.",
+      "start_time": 224.84,
+      "end_time": 226.7
+    },
+    {
+      "text": "An HTTP server could be bombarded with fake HTTP requests or a router could be continuously.",
+      "start_time": 226.86,
+      "end_time": 233.14
+    },
+    {
+      "text": "Indicted with packets to forward or that requires some kind of exceptional processing like.",
+      "start_time": 233.14,
+      "end_time": 238.94
+    },
+    {
+      "text": "Those trace route packets we saw earlier.",
+      "start_time": 238.94,
+      "end_time": 241.04
+    },
+    {
+      "text": "These kinds of attacks are often done by an actor who breaks into other hosts around.",
+      "start_time": 241.42,
+      "end_time": 246.34
+    },
+    {
+      "text": "The internet and then has them launch a coordinated denial of service attacks, sometimes called.",
+      "start_time": 246.34,
+      "end_time": 252.12
+    },
+    {
+      "text": "a DDoS attack on their victim.",
+      "start_time": 252.12,
+      "end_time": 254.02
+    },
+    {
+      "text": "These are a few of the most important types of attacks that could be mounted by a bad.",
+      "start_time": 254.94,
+      "end_time": 259.24
+    },
+    {
+      "text": "Now, what can we do to protect, mitigate, or avoid such attacks.",
+      "start_time": 260.04,
+      "end_time": 264.28
+    },
+    {
+      "text": "Well, we can protect against spoofing by using authentication, forcing you to prove who.",
+      "start_time": 264.78,
+      "end_time": 269.82
+    },
+    {
+      "text": "You are before you're able to get some network service.",
+      "start_time": 269.82,
+      "end_time": 272.28
+    },
+    {
+      "text": "A password is probably the simplest form of authentication.",
+      "start_time": 272.64,
+      "end_time": 275.38
+    },
+    {
+      "text": "The SIM card in your smartphone provides a hardware identity and authentication.",
+      "start_time": 275.38,
+      "end_time": 280.06
+    },
+    {
+      "text": "We can protect against data being sniffed by encrypting packet contents.",
+      "start_time": 280.6,
+      "end_time": 284.06
+    },
+    {
+      "text": "We can protect against data being tampered with by using digital signatures, a technique.",
+      "start_time": 284.34,
+      "end_time": 289.6
+    },
+    {
+      "text": "That allows a receiver of data to know that the data was sent by a given digital identity.",
+      "start_time": 289.6,
+      "end_time": 295.18
+    },
+    {
+      "text": "And that it's not been tampered with on route.",
+      "start_time": 295.18,
+      "end_time": 297.86
+    },
+    {
+      "text": "We can protect against unauthorized use of network resources by adding access control.",
+      "start_time": 298.72,
+      "end_time": 303.14
+    },
+    {
+      "text": "By specifying who can take what actions and making someone again prove who they are.",
+      "start_time": 303.14,
+      "end_time": 308.24
+    },
+    {
+      "text": "Before accessing these resources.",
+      "start_time": 308.24,
+      "end_time": 310.5
+    },
+    {
+      "text": "On the UMass campus, for example, you authenticate yourself to our campus wireless network before.",
+      "start_time": 310.9,
+      "end_time": 316.06
+    },
+    {
+      "text": "You're able to use it.",
+      "start_time": 316.06,
+      "end_time": 317.12
+    },
+    {
+      "text": "And then there are specialized pieces of hardware known as firewalls that are programmed.",
+      "start_time": 317.68,
+      "end_time": 322.12
+    },
+    {
+      "text": "To detect and mitigate attacks.",
+      "start_time": 322.12,
+      "end_time": 324.18
+    },
+    {
+      "text": "Firewalls sit in both edge and core networks and can be programmed, for example, to only.",
+      "start_time": 324.74,
+      "end_time": 329.86
+    },
+    {
+      "text": "Let certain users or certain types of traffic in or out of a network.",
+      "start_time": 329.86,
+      "end_time": 334.92
+    },
+    {
+      "text": "We'll cover firewalls and other so-called middle boxes when we get to chapter 4 and study.",
+      "start_time": 335.24,
+      "end_time": 340.36
+    },
+    {
+      "text": "Generalized forwarding.",
+      "start_time": 340.36,
+      "end_time": 341.48
+    },
+    {
+      "text": "Well, that was just a very high-level overview on the topic of networks under attack.",
+      "start_time": 342.7,
+      "end_time": 347.58
+    },
+    {
+      "text": "And we really looked at two questions.",
+      "start_time": 348.02,
+      "end_time": 349.38
+    },
+    {
+      "text": "We looked at the kinds of bad things that bad actors can do in a network setting.",
+      "start_time": 349.5,
+      "end_time": 354.32
+    },
+    {
+      "text": "And then we also looked at the kinds of defenses and techniques that can be deployed to.",
+      "start_time": 354.32,
+      "end_time": 359.78
+    },
+    {
+      "text": "Protect, to mitigate, and to react to network attacks.",
+      "start_time": 359.78,
+      "end_time": 362.96
+    },
+    {
+      "text": "Now remember, there's an entire chapter of the textbook that's devoted to network security.",
+      "start_time": 363.44,
+      "end_time": 367.88
+    },
+    {
+      "text": "And we'll come back to topics of network security throughout the course as we make our way.",
+      "start_time": 367.88,
+      "end_time": 372.44
+    },
+    {
+      "text": "Down the network protocol stack.",
+      "start_time": 372.44,
+      "end_time": 374.4
+    }
+  ],
+  "num_captions": 86,
+  "formatted_text": "Well, the next topic we want to cover and our broad overview of computer networking is. Networking security. Now, there's an entire chapter of our textbook chapter 8 that's devoted to network security. And so we'll get to that later and we'll be thinking about security throughout the. Course as we go through the different layers of the network architecture. But for now, there are two questions that we might want to keep in mind. First, what are the kinds of bad things that bad actors can do in a network setting. And we'll be focusing primarily on the network rather than the end systems. And then secondly, what are the broad class of defenses that can be deployed to both prevent. And mitigate and react to such network attacks. And we'll want to keep the answers to these two questions in mind as we go throughout. The course Well, let's start our discussion of network security by noting that the original internet. Architecture wasn't really designed with security in mind and it wasn't as if they really. Forgot about security. But rather, the original design vision was for quote unquote a group of mutually trusting. Users attached to a transparent network. Doesn't that sound nice. Obviously not what we have today. But the designers weren't naive. It's just that security was not consciously a critical design criteria given the. Envisioned use at the time. And so here we are today still sort of playing catch up in some sense on network security. In thinking about network security, we'll need to think about a few things. First, how can the bad guys attack or compromise a computer network. Secondly, how are we going to defend against some of these kinds of attacks. And then finally, how might we design network architectures that are immune to attacks. This is sometimes called security by design phrase that I love. It means that the architecture itself is built in such a way to enable security. Buildings are built that way, for example, to enable security by design. And so too can network architecture. And this is an active area of research right now in computer networking. Well, let's start by looking at some of the ways in which bad actors can behave. Well, it's probably not a bad assumption to assume that a bad actor can get copies of. Packets that are whizzing by on shared media like a wireless channel, for example. So for example, if we have a bad actor here at C, we should assume that C can read. everything that B is sending to A along the shared media. And there are actually software tools called packet sniffers that can be used to do. We'll actually use such a packet sniffer extensively. It's called Wireshark in this class to capture packets on the wire and for us to watch protocols. We should also assume that a bad actor can inject packets into the network containing. Any information they want. For example, here's a bad actor at C sending in a spoofed, that's to say, faked packets. to A with a fake source address indicating to A that the packet actually came from B. And this is conceptually the same thing as when you get a phishing email claiming to. Be from a bank, a colleague, or someone saying that they've come into a multimillion dollar. Sum and could you just help them deposit it into a bank account for your share of the. Well, you don't believe them and why should a piece of network equipment or piece of software. Believe what a packet says just because a packet arrived. Bad actors can also launch denial of service attacks by generating so much workload that. A network device becomes overloaded. An HTTP server could be bombarded with fake HTTP requests or a router could be continuously. Indicted with packets to forward or that requires some kind of exceptional processing like. Those trace route packets we saw earlier. These kinds of attacks are often done by an actor who breaks into other hosts around. The internet and then has them launch a coordinated denial of service attacks, sometimes called. a DDoS attack on their victim. These are a few of the most important types of attacks that could be mounted by a bad. Now, what can we do to protect, mitigate, or avoid such attacks. Well, we can protect against spoofing by using authentication, forcing you to prove who. You are before you're able to get some network service. A password is probably the simplest form of authentication. The SIM card in your smartphone provides a hardware identity and authentication. We can protect against data being sniffed by encrypting packet contents. We can protect against data being tampered with by using digital signatures, a technique. That allows a receiver of data to know that the data was sent by a given digital identity. And that it's not been tampered with on route. We can protect against unauthorized use of network resources by adding access control. By specifying who can take what actions and making someone again prove who they are. Before accessing these resources. On the UMass campus, for example, you authenticate yourself to our campus wireless network before. You're able to use it. And then there are specialized pieces of hardware known as firewalls that are programmed. To detect and mitigate attacks. Firewalls sit in both edge and core networks and can be programmed, for example, to only. Let certain users or certain types of traffic in or out of a network. We'll cover firewalls and other so-called middle boxes when we get to chapter 4 and study. Generalized forwarding. Well, that was just a very high-level overview on the topic of networks under attack. And we really looked at two questions. We looked at the kinds of bad things that bad actors can do in a network setting. And then we also looked at the kinds of defenses and techniques that can be deployed to. Protect, to mitigate, and to react to network attacks. Now remember, there's an entire chapter of the textbook that's devoted to network security. And we'll come back to topics of network security throughout the course as we make our way. Down the network protocol stack."
+}
